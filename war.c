@@ -170,5 +170,39 @@ int main () {
         printf("\nPressione Enter para continuar...\n");
         getchar(); //Pausa para o usuário ler
         break;  
+
+        case 2: // Listagem dos territorios
+            printf("--- Lista de Territorios Cadastrados ---");
+
+            if (totalterritorios == 0) {
+                printf("Nenhum territorio cadastrado");
+            } else {
+                for (int i = 0; i < totalterritorios; i++) {
+                    printf("---------------------------------\n");
+                    printf("TERRITORIO: %d\n", i + 1);
+                    printf(" - Nome: %s\n", war[i].nome);
+                    printf(" - Dominado por: Exercito %s\n", war[i].cor);
+                    printf(" - Tropas: %d\n", war[i].tropa);
+                }
+                    printf("------------------------------------------\n\n");             
+            }
+
+            printf("\n Pressione Enter para continuar...");
+            getchar();
+            break;
+
+            case 0: //Opção para sair
+            printf("\n Saindo do sistema...\n");
+            break;
+
+            default: //Opção Invalida
+            printf("\nOpção Invalida! Tente novamente...\n");
+            printf("\nPressione Enter para continuar...");
+            getchar();
+            break;
     }
-    }
+    
+    } while (opcao != 0);
+
+    return 0; 
+}
